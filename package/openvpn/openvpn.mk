@@ -14,6 +14,7 @@ OPENVPN_CONF_OPTS = \
 	--disable-plugin-auth-pam \
 	--enable-iproute2 \
 	--with-crypto-library=openssl \
+	--enable-password-save \
 	$(if $(BR2_STATIC_LIBS),--disable-plugins)
 OPENVPN_CONF_ENV = IFCONFIG=/sbin/ifconfig \
 	NETSTAT=/bin/netstat \
