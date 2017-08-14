@@ -13,12 +13,11 @@ BASH_CONF_OPTS = --with-installed-readline --without-bash-malloc
 BASH_LICENSE = GPL-3.0+
 BASH_LICENSE_FILES = COPYING
 
-define SYS_BASHRC
-	$(SED) '/SYS_BASHRC/s/\/\*//g' $(@D)/config-top.h
-	$(SED) '/SYS_BASHRC/s/\*\///g' $(@D)/config-top.h
-endef
-
-BASH_POST_EXTRACT_HOOKS += SYS_BASHRC
+#define SYS_BASHRC
+#	$(SED) '/SYS_BASHRC/s/\/\*//g;s/\*\///g' $(@D)/config-top.h
+#endef
+#
+#BASH_POST_EXTRACT_HOOKS += SYS_BASHRC
 
 BASH_CONF_ENV += \
 	ac_cv_rl_prefix="$(STAGING_DIR)" \
